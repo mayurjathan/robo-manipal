@@ -1,53 +1,57 @@
-//     4. Write a C++ program to print whether a number is a hill number or not. 
-// Note: Assume that a Hill Number is a natural number that has digits in asc order followed by digits in desc order where consecutive digits are not the same i.e. the number has a peak and an asc slope and desc slope. 
+// Write a C++ program to print whether a number is a hill number or not. 
+// Note: Assume that a Hill Number is a natural number that has digits in ascending order followed by digits in descending order where consecutive digits are not the same i.e. the number has a peak and an ascending slope and descending slope. 
 // Example: 
 // Hill Number: 147521, 23454 
 // Not Hill Number: 1, 12, 22, 12334, 123212321
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-bool isHillNumber(int num) {
-    int prev = -1;
-    bool asc = true;
-    bool desc = false;
-
-    while (num > 0) {
-        int digit = num % 10;
-
-        if (digit == prev) {
-            return false;  // Consecutive digits are the same; not a Hill Number.
-        }
-
-        if (digit > prev) {
-            asc = true;
-            if (desc) {
-                return false;  // There shouldn't be asc digits after desc ones.
-            }
-        } else if (digit < prev) {
-            desc = true;
-            if (!asc) {
-                return false;  // There shouldn't be desc digits before asc ones.
-            }
-        }
-
-        prev = digit;
-        num /= 10;
+bool isHill(int n)
+{
+    int i,len=0,j,arr[100], temp;
+    temp=n;
+    while(temp>0){
+        len++;
+        temp /= 10;
     }
+    for(i=len;i>=1;i--){
+        arr[i] = n%10; 
+        n /= 10;
+    }
+    for(i=1;i<=len-1;i++){
+        if(arr[i]==arr[i+1])
+            return false;
+        
+        else if(arr[i]>arr[i+1]){
+            for(j=i+1;j<=len-1;j++){
+                if(arr[j] == arr[j+1])
+                    return false;
+                
+                else if(arr[j]<arr[j+1])
+                    return false;
+                
+                else if(j==len-1)
+                    return true;
+            }
+        }
 
-    return asc && desc;
+        else if(i == len-1)
+            return false;    
+    }
+    return false;
 }
 
 int main() {
-    int num;
+    int number;
     cout << "Enter the number: ";
-    cin >> num;
+    cin >> number;
 
-    if (isHillNumber(num)) {
-        cout << num << " is a Hill Number." << endl;
+    if (isHill(number)) {
+        cout << "Is Hill number\n";
     } else {
-        cout << num << " is not a Hill Number." << endl;
+        cout << "Is Not Hill number\n";
     }
 
-    return 0;
+    return false;
 }
