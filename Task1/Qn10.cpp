@@ -26,8 +26,8 @@ int main()
     time_t start, end;
 	time(&start);
 
-    
-
+    for (int i = 0; i <= MAX_N; i++)
+        memo[i] = -1;
     for (int i = 0; i <= MAX_N; i++)
         cout << fibo(i) << " ";
         cout << endl;

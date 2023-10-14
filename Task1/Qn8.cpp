@@ -98,7 +98,6 @@ int transpose(int z[][5],int m, int c)
             temp[j][i]=z[i][j];
         }
     }
-￼
     for(i =0;i<m;i++)
     {
         for(j=0;j<c;j++)
