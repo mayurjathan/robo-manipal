@@ -23,9 +23,9 @@ int main ()
         }
     }
     cout << "Enter the Element of B : ";
-    for(i =0;i<m;i++)
+    for(i =0;i<r;i++)
     {
-        for(j=0;j<n;j++)
+        for(j=0;j<c;j++)
         {
             cin>>b[i][j];
         }
