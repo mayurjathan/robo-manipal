@@ -22,7 +22,6 @@ int main()
                                 word[j+1]=temp;
                         }
                 }
-                // if no swap occured in this pass the array is already sorted
                 if(!swapped)
                 {
                         break;
