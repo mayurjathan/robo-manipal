@@ -38,7 +38,7 @@ git commit -m "Commit message"
 - Use `git log` to view the commit history of your project, including details like the author's name, commit hash, date, and commit message.
 - You can revisit specific commits using `git checkout <commit-hash>`.
 ### Ignoring Files
-- To prevent Git from tracking certain files or directories, create a ``.gitignore file` in your project folder and list the files to be ignored.
+- To prevent Git from tracking certain files or directories, create a `.gitignore file` in your project folder and list the files to be ignored.
 ## Branching in Git
 - Git allows developers to work with different branches, which are individual timelines of project commits.
 - Creating a new branch is done with `git branch <new-branch-name>`.
