@@ -21,11 +21,11 @@ git config --global user.email "your@email.com"
 - A Git repository, or repo, serves as a container for tracking a project.
 - There are two main types of repositories: local (on your computer) and remote (hosted on a server, like GitHub).
 ### Initializing a Repository
-- To create a new local repository, navigate to your project's folder and run git init. This creates a hidden .git directory to store tracking data.
+- To create a new local repository, navigate to your project's folder and run `git init`. This creates a hidden `.git` directory to store tracking data.
 ## Tracking Changes with Git
 ### Staging and Committing
 - The process of committing involves taking snapshots (commits) of your project at specific points in time.
-- To stage files for a commit, use the git add command. You can stage specific files or all files in the project.
+- To stage files for a commit, use the `git add`command. You can stage specific files or all files in the project.
 ```bash
 git add file.js           # Stage a specific file
 git add .                 # Stage all files and folders
@@ -35,16 +35,16 @@ git add .                 # Stage all files and folders
 git commit -m "Commit message" 
 ```
 ### Commit History
-- Use git log to view the commit history of your project, including details like the author's name, commit hash, date, and commit message.
-- You can revisit specific commits using git checkout <commit-hash>.
+- Use `git log` to view the commit history of your project, including details like the author's name, commit hash, date, and commit message.
+- You can revisit specific commits using `git checkout <commit-hash>`.
 ### Ignoring Files
-- To prevent Git from tracking certain files or directories, create a .gitignore file in your project folder and list the files to be ignored.
+- To prevent Git from tracking certain files or directories, create a ``.gitignore file` in your project folder and list the files to be ignored.
 ## Branching in Git
 - Git allows developers to work with different branches, which are individual timelines of project commits.
-- Creating a new branch is done with git branch <new-branch-name>.
-- Switch between branches using git checkout <branch-name>.
-- Merge branches with git merge <branch-name>.
-- Delete a branch with git branch -d <branch-name>.
+- Creating a new branch is done with `git branch <new-branch-name>`.
+- Switch between branches using `git checkout <branch-name>`.
+- Merge branches with `git merge <branch-name>`.
+- Delete a branch with `git branch -d <branch-name>`.
 ### GitHub: Collaborative Development
 - GitHub is a platform that hosts Git repositories, making it easy for teams to collaborate on software projects.
 - Developers can push and pull changes to and from remote repositories on GitHub.
