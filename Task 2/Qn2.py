@@ -1,32 +1,24 @@
 #Take an input string of arbitrary length and split it into its constituent words. 
 # Construct sentences of all possible combinations using these words and print them to the console.
+import itertools
+
 def split(input):
-    words=[]
-    word=''
-    for char in input:
-        if char == ' ':
-            if word:
-                words.append(word)
-            word=''
-        else:
-            word+=char
-    if word:
-        words.append(word)
+    words = input.split()
     return words
 
 def generate(words):
-    def helper(words,cur,ind,res):
-        if ind==len(words):
-            res.append(' '.join(cur))
-            return
-        helper(words,cur+[words[ind]],ind+1,res)
-        helper(words,cur,ind+1,res)
-    sente=[]
-    helper(words,[],0,sente)
-    return sente
-input=input("Enter a String : ")
-word=split(input)
-sente=generate(word)
-for sent in sente:
-    print(sent)
-                
+    all_combinations = []
+
+    for r in range(1, len(words) + 1):
+        combi = itertools.permutations(words, r)
+        for combo in combi:
+            all_combinations.append(" ".join(combo))
+
+    return all_combinations
+
+tring = input("Enter a String: ")
+word = split(input)
+combi = generate(word)
+
+for combo in combi:
+    print(combo)
